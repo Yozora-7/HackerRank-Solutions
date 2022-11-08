@@ -38,8 +38,11 @@ Explanation 0
 
 def is_leap(year):
     leap = False
-    while leap % 4 and leap % 400:
-        return True
+    if (year % 100 == 0) and (year %400 != 0):
+        leap = False
+    elif (year % 4 == 0):
+        leap = True
     return leap
+
 
 year = int(input())
